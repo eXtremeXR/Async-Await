@@ -4,7 +4,7 @@ const PowerPlant = require("./PowerPlant");
 // Suppose we're running a grid of power plants!
 // We want to group them together in a single array and be able to quickly turn them ON and OFF
 async function main() {
-  try {  
+  try {
     const powerPlants = [];
 
     powerPlants.push(new PowerPlant("01"));
@@ -14,12 +14,12 @@ async function main() {
     powerPlants.push(new PowerPlant("05"));
 
     // Let's turn all of them ON
-    powerPlants.forEach(powerPlant => {
+    powerPlants.forEach(async powerPlant => {
       await powerPlant.turnOn();
     });
 
     // Let's turn all of them OFF
-    powerPlants.forEach(powerPlant => {
+    powerPlants.forEach(async powerPlant => {
       await powerPlant.turnOff();
     });
 
@@ -29,4 +29,3 @@ async function main() {
 }
 
 main();
-
